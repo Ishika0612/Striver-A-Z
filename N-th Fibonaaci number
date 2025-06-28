@@ -1,0 +1,27 @@
+import java.util.*;
+public class Solution {
+
+
+	public static void main(String[] args) {
+		
+		/* Your class should be named Solution.
+	 	* Read input as specified in the question.
+	 	* Print output as specified in the question.
+		*/
+     Scanner sc = new Scanner(System.in);
+	 int n = sc.nextInt();
+	 if(n==1 || n==2){
+		 System.out.print(1);
+		 return;
+	 }
+	 int first=1;
+	 int second=1;
+	 for(int i=3;i<=n;i++){
+		 int temp=first+second;
+		 first=second;
+		 second=temp;
+	 }
+		System.out.print(second);
+	}
+
+}
