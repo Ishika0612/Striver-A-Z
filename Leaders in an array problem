@@ -1,0 +1,21 @@
+class Solution {
+    static ArrayList<Integer> leaders(int arr[]) {
+        // code here
+        ArrayList<Integer>ans = new ArrayList<>();
+        Stack<Integer>stack=new Stack<>();
+        for(int i=arr.length-1;i>=0;i--){
+            if(stack.isEmpty()){
+                ans.add(arr[i]);
+                stack.push(arr[i]);
+            }
+            else if(stack.peek()<=arr[i]){
+                ans.add(arr[i]);
+                stack.pop();
+                stack.push(arr[i]);
+            }
+           
+        }
+        Collections.reverse(ans);
+        return ans;
+    }
+}
