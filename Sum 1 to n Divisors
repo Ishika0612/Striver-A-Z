@@ -1,0 +1,16 @@
+class Solution {
+    
+     public static long divisors(long n) {
+         long result=0;
+         for(long i=1;i<=n;i++){
+              long ans = 1;
+        for(long j=2;j<=n;j++){
+            if(n%j==0)
+            ans+=j;
+        }
+        result+=ans;
+         }
+         
+         return result;
+     }
+}
