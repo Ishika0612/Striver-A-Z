@@ -1,0 +1,30 @@
+class Solution {
+    int countFreq(int[] arr, int target) {
+        // code here
+        int start=0;
+        int end = arr.length-1;
+        int freq=0;
+        while(start<=end){
+            int mid = start + (end-start)/2;
+            if(arr[mid]==target){
+               freq++;
+               int s=mid-1;
+               while(s>=0 && arr[s]==target){
+               freq++;
+               s--;
+               }
+               s=mid+1;
+               while(s<arr.length && arr[s]==target){
+               freq++;
+               s++;
+               }
+               break;
+            }
+            else if(arr[mid]>target)
+              end=mid-1;
+            else
+             start=mid+1;
+        }
+        return freq;
+    }
+}
