@@ -1,0 +1,21 @@
+public class Solution {
+    public static void numberCrown(int n) {
+        // Write your code here.
+        for(int i=1;i<=n;i++){
+            //print
+            for(int j=1;j<=i;j++){
+              System.out.print(j +" ");
+            }
+            //space
+            for(int j=1;j<2*n-1;j++){
+               System.out.print("  ");
+            }
+            //print
+            int x = i;
+            for(int j=1;j<=i;j++){
+              System.out.print(x-- + " ");
+            } 
+            System.out.println();
+        }
+    }
+}
