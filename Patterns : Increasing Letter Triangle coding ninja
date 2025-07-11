@@ -1,0 +1,13 @@
+public class Solution {
+    public static void nLetterTriangle(int n) {
+        // Write your code here
+        int x=65;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                char c = (char)(x+j);
+                System.out.print(c +" ");
+            }
+            System.out.println();
+        }
+    }
+}
