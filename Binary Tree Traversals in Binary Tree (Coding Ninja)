@@ -1,0 +1,44 @@
+import java.util.*;
+public class Solution {
+    public static void inorder(TreeNode root,List<Integer>inarr){
+        if(root==null){
+            return;
+        }
+         inorder(root.left,inarr);
+        inarr.add(root.data);
+        inorder(root.right,inarr);
+    }
+
+    public static void preorder(TreeNode root,List<Integer>prearr){
+        if(root==null){
+            return;
+        }
+        prearr.add(root.data);
+        preorder(root.left,prearr);
+        preorder(root.right,prearr);
+    }
+
+    public static void postorder(TreeNode root,List<Integer>postarr){
+        if(root==null){
+            return;
+        }
+         postorder(root.left,postarr);
+        postorder(root.right,postarr);
+        postarr.add(root.data);
+    }
+    public static List<List<Integer>> getTreeTraversal(TreeNode root) {
+        // Write your code here.
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer>inarr= new ArrayList<>();
+        List<Integer>prearr= new ArrayList<>();
+        List<Integer>postarr= new ArrayList<>();
+        inorder(root,inarr);
+        preorder(root,prearr);
+        postorder(root,postarr);
+       ans.add(inarr);
+       ans.add(prearr);
+       ans.add(postarr);
+       return ans;
+
+    }
+}
